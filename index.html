@@ -267,17 +267,17 @@
                     <!-- Footer Social Icons-->
                     <div class="col-lg-6 mb-5 mb-lg-0">
                         <h4 class="text-uppercase mb-4">Around the Web</h4>
-                        <a class="btn btn-outline-light btn-social mx-1" target="_blank" rel="noopener" href="https://www.linkedin.com/in/lukas-folle/"><i alt="" class="fab fa-fw fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" target="_blank" rel="noopener" href="https://twitter.com/lkasder?lang=en"><i alt="" class="fab fa-fw fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" target="_blank" rel="noopener" href="https://github.com/lukasfolle"><i alt="" class="fab fa-fw fa-github"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" target="_blank" rel="noopener" href="https://www.xing.com/profile/Lukas_Folle2"><i alt="" class="fab fa-fw fa-xing-square"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" target="_blank" aria-label="LinkedIn" rel="noopener" href="https://www.linkedin.com/in/lukas-folle/"><i alt="" class="fab fa-fw fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" target="_blank" aria-label="Twitter" rel="noopener" href="https://twitter.com/lkasder?lang=en"><i alt="" class="fab fa-fw fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" target="_blank" aria-label="Github" rel="noopener" href="https://github.com/lukasfolle"><i alt="" class="fab fa-fw fa-github"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" target="_blank" aria-label="Xing" rel="noopener" href="https://www.xing.com/profile/Lukas_Folle2"><i alt="" class="fab fa-fw fa-xing-square"></i></a>
                     </div>
                 </div>
             </div>
         </footer>
         <!-- Copyright Section-->
         <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>Copyright © Lukas Folle <script async>document.write(new Date().getFullYear())</script></small></div>
+            <div class="container"><small id="copyright">Copyright © Lukas Folle </small></div>
         </div>
         <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
         <div class="scroll-to-top d-lg-none position-fixed">
@@ -291,5 +291,15 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <!-- Copyright current year-->
+        <div>
+            &copy;
+            <span id="copyright">
+                <script async>
+                document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
+              </script>
+            </span>
+            Company Name
+        </div>
     </body>
 </html>
