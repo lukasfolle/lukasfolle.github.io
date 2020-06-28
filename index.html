@@ -3,7 +3,7 @@
     <head>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-74405481-2"></script>
-        <script>
+        <script async>
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
@@ -28,114 +28,130 @@
         <script src="js/lazysizes.min.js" async></script>
     </head>
     <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">Lukas Folle</a>
-                <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
         <!-- Masthead-->
-        <header class="masthead bg-primary text-white text-center">
-            <div class="container d-flex align-items-center flex-column">
+        <header class="masterhead bg-primary text-white text-center">
+          <div class="row">
+            <div class="col-md-6 col-lg-12 mb-5">
                 <!-- Masthead Avatar Image-->
-                <img data-src="assets/img/ProfilePhoto.png" class="rounded-circle lazyload" alt="Profile image of me" width="275" height="250">
+                <div class="profile-image">
+                  <img data-src="assets/img/ProfilePhoto.png" class="rounded-circle lazyload" alt="Profile image of me" width="275" height="250">
+                </div
                 <!-- Masthead Heading-->
                 <h1 class="masthead-heading text-uppercase mb-0">Lukas Folle</h1>
                 <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-mug-hot"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
+
                 <!-- Masthead Subheading-->
                 <p class="masthead-subheading font-weight-light mb-0">AI Scientist - Developer - Medical Engineer</p>
             </div>
+            <div class="col-md-6 col-lg-12 mb-5">
+              <p class="lead">I like to train neural networks on medical data.</p>
+              <div class="divider-custom-icon">
+                <i class="fas fa-robot"></i>
+                <i class="fas fa-brain"></i>
+                <i class="fas fa-vial"></i>
+              </div>
+            </div>
+          </div>
         </header>
         <!-- Portfolio Section-->
         <section class="page-section portfolio" id="portfolio">
             <div class="container">
-                <!-- Portfolio Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-lightbulb"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
                 <!-- Portfolio Grid Items-->
                 <div class="row">
-                    <!-- Portfolio Item 1-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid lazyload" data-src="assets/img/portfolio/cabin.png" alt="" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 2-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid lazyload" data-src="assets/img/portfolio/cake.png" alt="" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 3-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid lazyload" data-src="assets/img/portfolio/circus.png" alt="" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 4-->
-                    <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid lazyload" data-src="assets/img/portfolio/game.png" alt="" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 5-->
-                    <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid lazyload" data-src="assets/img/portfolio/safe.png" alt="" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 6-->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal6">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid lazyload" data-src="assets/img/portfolio/submarine.png" alt="" />
-                        </div>
-                    </div>
+                    <ul class="timeline">
+                     <li>
+                       <div class="timeline-badge"><img class="img-fluid rounded mb-5 lazyload" data-src="assets/img/fau.png" alt="" /></div>
+                       <div class="timeline-panel">
+                         <div class="timeline-heading">
+                           <h4 class="timeline-title">Master Thesis at FAU (Erlangen, Germany)</h4>
+                           <p><small class="text-muted">Feb. 2020 - Jul. 2020</small></p>
+                         </div>
+                         <div class="timeline-body">
+                           <p>In my master thesis the I worked on MRI data of the shoulder to identify pathologies using an automated system. For this purpose a special loss function that converges on high class imbalance was developed. Additonally I developed a special architecture that could fuse spatial information about the pathology into the classification network. Different neural network architectures and training schemes were compare finally.</p>
+                         </div>
+                       </div>
+                     </li>
+                     <li class="timeline-inverted">
+                       <div class="timeline-badge"><img class="img-fluid rounded mb-5 lazyload" data-src="assets/img/fau.png" alt="" /></div>
+                       <div class="timeline-panel">
+                         <div class="timeline-heading">
+                           <h4 class="timeline-title">Master Studies at FAU (Erlangen, Germany)</h4>
+                           <p><small class="text-muted">2017 - 2020</small></p>
+                         </div>
+                         <div class="timeline-body">
+                           <p>My master studies are in medical engineering and focus on image and data processing. For me the most influential lectures and exercises were Deep Learning by Prof. Dr. Andreas Maier, Research Project and subsequent publication with Sulaiman Vesal and the seminar "Automatic Question Answering Using IBM Watson".</p>
+                         </div>
+                       </div>
+                     </li>
+                     <li>
+                       <div class="timeline-badge"><img class="img-fluid rounded mb-5 lazyload" data-src="assets/img/siemens_health.png" alt="" /></div>
+                       <div class="timeline-panel">
+                         <div class="timeline-heading">
+                           <h4 class="timeline-title">Internship at Siemens Healthineers (Princeton, NJ, US)</h4>
+                           <p><small class="text-muted">Oct. 2019 - Apr. 2020</small></p>
+                         </div>
+                         <div class="timeline-body">
+                           <p>During my intership in Princeton I was working in a team of Data Scientists on AI systems for the automated assessment of pathologies in MRI scans.</p>
+                         </div>
+                       </div>
+                     </li>
+                     <li class="timeline-inverted">
+                       <div class="timeline-badge"><img class="img-fluid rounded mb-5 lazyload" data-src="assets/img/siemens_health.png" alt="" /></div>
+                       <div class="timeline-panel">
+                         <div class="timeline-heading">
+                           <h4 class="timeline-title">Working Student at Siemens Healthineers (Forchheim, Germany)</h4>
+                           <p><small class="text-muted">Jan. 2019 - Oct. 2019</small></p>
+                         </div>
+                         <div class="timeline-body">
+                           <p>In my part-time working student position in a software development team we were working on automated segmentation of non-patient structures in CT scans using deep learning methods. In addition to running neural network experiments we also annoted the data using Siemens´ syngo.via.</p>
+                         </div>
+                       </div>
+                     </li>
+                     <li>
+                       <div class="timeline-badge"><img class="img-fluid rounded mb-5 lazyload" data-src="assets/img/draeger.png" alt="" /></div>
+                       <div class="timeline-panel">
+                         <div class="timeline-heading">
+                           <h4 class="timeline-title">Working Student at Dräger (Lübeck, Germany)</h4>
+                           <p><small class="text-muted">Feb. 2018 - Apr. 2018</small></p>
+                         </div>
+                         <div class="timeline-body">
+                           <p>During my first working student position at a medical device manufacturer I designed electronic circuits for the flow measurements of neonatal ventilators. Additonally, I could get a hands-on experience evaluating different sensor statistics in a controlled environment.</p>
+                         </div>
+                       </div>
+                     </li>
+                     <li class="timeline-inverted">
+                       <div class="timeline-badge"><img class="img-fluid rounded mb-5 lazyload" data-src="assets/img/draeger.png" alt="" /></div>
+                       <div class="timeline-panel">
+                         <div class="timeline-heading">
+                           <h4 class="timeline-title">Internship at Dräger (Lübeck, Germany)</h4>
+                           <p><small class="text-muted">Oct. 2017 - Jan. 2018</small></p>
+                         </div>
+                         <div class="timeline-body">
+                           <p>In my internship at Dräger I worked on the modularization of anesthesia machines using network connected microcontrollers and programmed the controllers in C.</p>
+                         </div>
+                       </div>
+                     </li>
+                     <li>
+                       <div class="timeline-badge"><img class="img-fluid rounded mb-5 lazyload" data-src="assets/img/uzl.png" alt="" /></div>
+                       <div class="timeline-panel">
+                         <div class="timeline-heading">
+                           <h4 class="timeline-title">Bachelor Studies at Lübeck University (Lübeck, Germany)</h4>
+                           <p><small class="text-muted">2014 - 2017</small></p>
+                         </div>
+                         <div class="timeline-body">
+                           <p>In my bachelor studies I learned the anatomical and physiological basics of the human. In addition to the engineering basics I also learned programming during my bachelor.</p>
+                         </div>
+                       </div>
+                     </li>
+                  </ul>
                 </div>
             </div>
         </section>
-        <!-- About Section-->
+        <!-- Publications Section-->
         <section class="page-section bg-primary text-white mb-0" id="about">
             <div class="container">
                 <!-- About Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
+                <h2 class="page-section-heading text-center text-uppercase text-white">Publications</h2>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
@@ -144,8 +160,48 @@
                 </div>
                 <!-- About Section Content-->
                 <div class="row">
-                    <div class="col-lg-4 ml-auto"><p class="lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.</p></div>
-                    <div class="col-lg-4 mr-auto"><p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p></div>
+                    <div class="col-lg-6 mr-auto">
+                      <p class="lead">Dilated deeply supervised networks for hippocampus segmentation in MRI @ BVM2019, Lübeck</p>
+                      <p class="lead">This paper was the result of a research project at FAU during my master studies.</p>
+                    </div>
+                    <div class="col-lg-6 mr-auto">
+                      <p>
+                        <a target="_blank" href="https://arxiv.org/abs/1903.09097">
+                          <img data-src="assets/img/paper.png" class="lazyload" alt="Profile image of me" width="380" height="500">
+                        </a>
+                      </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- Skills Section-->
+        <section class="page-section bg-white text-primary mb-0" id="about">
+            <div class="container">
+                <!-- About Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-primary">Skills and Interests</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-code"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- About Section Content-->
+                <div class="row">
+                    <div class="col-lg-4 ml-auto">
+                      <p class="lead">Programming in Python, Matlab, C++ and Java.</p>
+                      <p class="lead">Strong background in deep learning with Pytorch and Tensorflow.</p>
+                      <p class="lead">Image processing and data base managment.</p>
+                    </div>
+                    <div class="col-lg-4 mr-auto">
+                      <p class="lead">German native speaker</p>
+                      <p class="lead">Proficient English</p>
+                      <p class="lead">Working knowledge in Spanish</p>
+                    </div>
+                    <div class="col-lg-4 mr-auto">
+                      <p class="lead">Climbing boulder</p>
+                      <p class="lead">Enthusiastic skier</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -167,7 +223,6 @@
                         <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="https://twitter.com/lkasder?lang=en"><i class="fab fa-fw fa-twitter"></i></a>
                         <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="https://github.com/lukasfolle"><i class="fab fa-fw fa-github"></i></a>
                         <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="https://www.xing.com/profile/Lukas_Folle2"><i class="fab fa-fw fa-xing-square"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="https://www.facebook.com/folle.lukas"><i class="fab fa-fw fa-facebook-f"></i></a>
                     </div>
                 </div>
             </div>
@@ -180,211 +235,7 @@
         <div class="scroll-to-top d-lg-none position-fixed">
             <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a>
         </div>
-        <!-- Portfolio Modals-->
-        <!-- Portfolio Modal 1-->
-        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal1Label">Log Cabin</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-microchip"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5 lazyload" data-src="assets/img/portfolio/cabin.png" alt="" />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 2-->
-        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal2Label">Tasty Cake</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5 lazyload" data-src="assets/img/portfolio/cake.png" alt="" />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 3-->
-        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-labelledby="portfolioModal3Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal3Label">Circus Tent</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5 lazyload" data-src="assets/img/portfolio/circus.png" alt="" />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 4-->
-        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-labelledby="portfolioModal4Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal4Label">Controller</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5 lazyload" data-src="assets/img/portfolio/game.png" alt="" />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 5-->
-        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-labelledby="portfolioModal5Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal5Label">Locked Safe</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5 lazyload" data-src="assets/img/portfolio/safe.png" alt="" />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 6-->
-        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-labelledby="portfolioModal6Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal6Label">Submarine</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5 lazyload" data-src="assets/img/portfolio/submarine.png" alt="" />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
