@@ -1,290 +1,661 @@
+
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="This is my personal website and contains info about my experience, skills and publications." />
-        <meta name="author" content="Lukas Folle" />
-        <title>Lukas Folle</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/img/ai.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script defer src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" rel="preload" as="style" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&display=swap" rel="stylesheet" rel="preload" as="style" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-        <script async src="js/lazysizes.min.js"></script>
-    </head>
-    <body id="page-top">
-        <!-- Masthead-->
-        <header class="masterhead bg-primary text-white text-center">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6 col-lg-12 mb-5">
-                  <!-- Masthead Avatar Image-->
-                  <div class="profile-image">
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lukas Folle - Machine Learning Engineer in Medical AI</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Personal website of Dr. Lukas Folle, a Machine Learning Engineer and PhD graduate specializing in AI applications for medical imaging and diagnostics. Explore his career, education, projects, and vision for AI in medicine.">
+    <meta name="keywords" content="Lukas Folle, Machine Learning Engineer, AI, Deep Learning, Medical Imaging, PhD, Pytorch, Tensorflow, Medical AI, Healthcare AI, Germany, Snke, Siemens Healthineers, Dräger">
+    <link rel="canonical" href="https://lukasfolle.de/">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Lukas Folle - Machine Learning Engineer in Medical AI">
+    <meta property="og:description" content="Personal website of Dr. Lukas Folle, a Machine Learning Engineer specializing in AI for medical imaging and advancing healthcare diagnostics.">
+    <meta property="og:image" content="https://lukasfolle.de/assets/img/ProfilePhoto.png">
+    <meta property="og:url" content="https://lukasfolle.de/">
+    <meta property="og:type" content="website">
+
+    <!-- Font Loading Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Styles & Dark Mode Script -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7f6;
+            color: #1a202c;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        /* Light mode styles are default */
+        .card {
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .tag {
+            background-color: #e2e8f0;
+            color: #4a5568;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Dark mode styles */
+        .dark body {
+            background-color: #1a202c;
+            color: #e2e8f0;
+        }
+        .dark .card {
+            background-color: #2d3748;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+        }
+        .dark .card:hover {
+             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+        }
+        .dark .tag {
+            background-color: #4a5568;
+            color: #e2e8f0;
+        }
+        .dark header, .dark footer {
+            background-color: #2d3748; /* Used for mobile menu background as well */
+            border-color: #4a5568;
+        }
+        .dark h1, .dark h2, .dark h3, .dark .section-title, .dark .hero-title {
+            color: #ffffff;
+        }
+         .dark p, .dark li, .dark a, .dark .text-gray-600, .dark .hero-subtitle, .dark .text-gray-500 {
+            color: #cbd5e0;
+        }
+        .dark a:hover {
+            color: #ffffff;
+        }
+        .dark .icon-color {
+            color: #90cdf4; /* A nice blue for dark mode icons */
+        }
+        
+        .icon-color {
+             color: #4299e1; /* A nice blue for light mode icons */
+        }
+
+        /* Animation */
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card ul {
+            list-style-type: disc;
+            padding-left: 1.5rem; /* Indent list items */
+            margin-top: 0.5rem;
+        }
+        .card ul li {
+            margin-bottom: 0.25rem;
+        }
+
+        /* Print CV Header - Hidden by default, shown for print */
+        .print-cv-header {
+            display: none;
+        }
+
+        @media print {
+            body {
+                font-family: 'Times New Roman', Times, serif !important; /* More traditional CV font */
+                background-color: #ffffff !important;
+                color: #000000 !important;
+                font-size: 10pt !important;
+                margin: 20mm !important; /* Standard A4 margins */
+                padding: 0 !important;
+                -webkit-print-color-adjust: exact !important; /* Ensure colors print in Chrome/Safari */
+                print-color-adjust: exact !important; /* Standard */
+            }
+
+            header, footer, #phd-demo, nav > div:not(#main-nav-links), #mobile-menu-button /* Nav links container and mobile button */ {
+                display: none !important;
+            }
+             #main-nav-links { /* Ensure nav links are hidden in print if they were somehow visible */
+                display: none !important;
+            }
+            
+            .text-center .flex.justify-center.items-center.gap-4 > svg { /* Decorative icons next to section titles */
+                display: none !important;
+            }
+            .text-center .flex.justify-center.items-center.gap-4 { /* Container for icon + title */
+                justify-content: flex-start !important; /* Align title left */
+                margin-bottom: 10px !important; /* Ensure consistent spacing after title */
+            }
+            .text-center.mb-12 {
+                margin-bottom: 1rem !important; /* Reduce bottom margin for section title containers */
+            }
+
+
+            .print-cv-header {
+                display: block !important;
+                text-align: left;
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid #000;
+            }
+            .print-cv-header h1 {
+                font-family: 'Times New Roman', Times, serif !important;
+                font-size: 18pt !important;
+                font-weight: bold !important;
+                color: #000 !important;
+                margin-bottom: 5px !important;
+            }
+            .print-cv-header p {
+                font-family: 'Times New Roman', Times, serif !important;
+                font-size: 10pt !important;
+                color: #000 !important;
+                margin: 2px 0 !important;
+            }
+            .print-cv-header a {
+                color: #000 !important;
+                text-decoration: underline !important;
+            }
+
+            #hero {
+                text-align: left !important;
+                padding: 0 0 15px 0 !important;
+                margin-bottom: 15px !important;
+            }
+
+            .hero-title {
+                font-family: 'Times New Roman', Times, serif !important;
+                font-size: 16pt !important;
+                text-align: left !important;
+                color: #000000 !important;
+                margin-bottom: 5px !important;
+            }
+            .hero-subtitle {
+                font-family: 'Times New Roman', Times, serif !important;
+                font-size: 10pt !important;
+                text-align: left !important;
+                color: #000000 !important;
+                max-width: 100% !important;
+                line-height: 1.4 !important;
+            }
+
+            main.container {
+                padding: 0 !important;
+                margin: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            
+            section {
+                margin-bottom: 20px !important; /* Increased space between sections */
+                page-break-inside: avoid !important;
+            }
+
+            #about .flex-col, #about .md\:flex-row { /* About me section with image and text */
+                flex-direction: column !important; /* Stack image and text */
+                align-items: flex-start !important;
+            }
+            #about picture, #about img {
+                display: none !important; /* Hide profile image for a more traditional CV feel */
+            }
+            #about .md\:w-1\/3, #about .md\:w-2\/3 {
+                width: 100% !important;
+                padding-left: 0 !important;
+                text-align: left !important;
+            }
+            #about .md\:w-2\/3 h2.section-title { /* About me title */
+                font-family: 'Times New Roman', Times, serif !important;
+                font-size: 14pt !important;
+                margin-top: 0 !important; /* Remove top margin if image is hidden */
+                 margin-bottom: 8px !important;
+            }
+            #about .md\:w-2\/3 h3.section-title { /* "My Approach" title */
+                 font-family: 'Times New Roman', Times, serif !important;
+                 font-size: 12pt !important;
+                 font-weight: bold !important;
+                 margin-bottom: 5px !important;
+            }
+            #about p {
+                font-family: 'Times New Roman', Times, serif !important;
+                font-size: 10pt !important;
+                line-height: 1.4 !important;
+                margin-bottom: 10px !important;
+            }
+
+
+            .section-title {
+                font-family: 'Times New Roman', Times, serif !important;
+                font-size: 14pt !important;
+                text-align: left !important;
+                font-weight: bold !important;
+                color: #000000 !important;
+                margin-bottom: 10px !important;
+            }
+            
+            .card {
+                background-color: #ffffff !important;
+                border: 1px solid #cccccc !important;
+                box-shadow: none !important;
+                padding: 10px !important;
+                margin-bottom: 10px !important;
+                page-break-inside: avoid !important;
+                border-radius: 0 !important;
+            }
+            .card:hover {
+                transform: none !important;
+            }
+            .card h3 { /* Job titles, degree names */
+                font-family: 'Times New Roman', Times, serif !important;
+                font-size: 12pt !important;
+                font-weight: bold !important;
+                color: #000000 !important;
+                margin-bottom: 2px !important;
+            }
+            .card p, .card ul li, .card .text-gray-600, .card .text-sm.text-gray-500 {
+                font-family: 'Times New Roman', Times, serif !important;
+                font-size: 10pt !important;
+                color: #000000 !important;
+                line-height: 1.4 !important;
+                margin-bottom: 2px !important;
+            }
+            .card .text-sm.text-gray-500 { /* Dates, locations */
+                margin-bottom: 4px !important; /* More space after dates/location line */
+            }
+            .card ul {
+                padding-left: 20px !important; /* Standard bullet indentation */
+                list-style-type: disc !important;
+                margin-top: 5px !important;
+            }
+            .card ul li {
+                margin-bottom: 3px !important;
+            }
+
+            .grid, .md\:grid-cols-2 { /* For education and skills sections */
+                display: block !important; /* Stack items */
+                grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+            }
+            .grid > div.card, .md\:grid-cols-2 > div.card { /* Ensure cards in grid take full width */
+                width: 100% !important;
+                box-sizing: border-box; /* Ensure padding/border included in width */
+                margin-bottom: 10px !important;
+            }
+
+            .tag {
+                background-color: #eeeeee !important;
+                color: #000000 !important;
+                border: 1px solid #dddddd !important;
+                padding: 2px 5px !important;
+                font-size: 9pt !important;
+                border-radius: 4px !important;
+                font-family: 'Times New Roman', Times, serif !important;
+                display: inline-block;
+                margin: 2px;
+            }
+            .flex.flex-wrap.gap-2 {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5px; /* Adjust gap for print if needed */
+            }
+
+            a {
+                color: #000000 !important;
+                text-decoration: none !important; 
+            }
+            a[href^="http"]:not(.print-cv-header a):after, 
+            a[href^="mailto"]:not(.print-cv-header a):after {
+                /* content: " (" attr(href) ")"; Consider showing URLs for non-header links if desired */
+                /* font-size: 9pt; */
+            }
+            
+            .fade-in {
+                animation: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            
+            h1, h2, h3, p, li, span, div { /* Reset Inter font globally for print */
+                 font-family: 'Times New Roman', Times, serif !important;
+            }
+            .font-bold { font-weight: bold !important; }
+            .font-medium { font-weight: 500 !important; } /* Times doesn't have as many weights */
+            .leading-relaxed { line-height: 1.5 !important; }
+
+        }
+
+    </style>
+    <script>
+        // This script runs before content render to prevent a flash of unstyled content.
+        const themeSwitch = () => {
+            if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        };
+        themeSwitch();
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', themeSwitch);
+    </script>
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://esm.sh/react@^19.1.0/"
+      }
+    }
+    </script>
+</head>
+<body class="antialiased">
+
+    <!-- CV Header for Print Only -->
+    <div class="print-cv-header">
+        <h1>Dr. Ing. Lukas Folle</h1>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/lukas-folle/" target="_blank">linkedin.com/in/lukas-folle</a></p>
+    </div>
+
+
+    <!-- Header -->
+    <header class="bg-white shadow-md transition sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-800">Lukas Folle</h1>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" type="button" class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white focus:outline-none" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav-links">
+                    <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+
+            <!-- Navigation Links -->
+            <div id="main-nav-links" 
+                 class="hidden absolute md:static top-[64px] left-0 w-full md:w-auto md:flex md:items-center bg-white dark:bg-[#2d3748] md:bg-transparent dark:md:bg-transparent shadow-lg md:shadow-none py-2 md:py-0 md:space-x-6">
+                <a href="#about" class="block text-center md:text-left px-6 py-3 md:p-0 text-gray-600 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition">About</a>
+                <a href="#career" class="block text-center md:text-left px-6 py-3 md:p-0 text-gray-600 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition">Career</a>
+                <a href="#education" class="block text-center md:text-left px-6 py-3 md:p-0 text-gray-600 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition">Education</a>
+                <a href="#phd-demo" class="block text-center md:text-left px-6 py-3 md:p-0 text-gray-600 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition">PhD Demo</a>
+                <a href="#personal" class="block text-center md:text-left px-6 py-3 md:p-0 text-gray-600 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition">Skills</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="py-16 md:py-24 text-center fade-in">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6 hero-title">Advancing Medical Diagnostics with Intelligent AI Solutions</h2>
+            <p class="text-xl text-gray-600 leading-relaxed md:max-w-3xl mx-auto hero-subtitle">
+                Dedicated to leveraging cutting-edge machine learning to transform medical imaging, enhance diagnostic accuracy, and ultimately improve patient care. My work bridges the gap between innovative research and practical, life-saving applications.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+
+        <!-- About Me Section -->
+        <section id="about" class="fade-in mb-20">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-8 md:mb-0 text-center">
                     <picture>
-                      <source class="rounded-circle lazyload" width="300" data-srcset="assets/img/ProfilePhoto.webp" type="image/webp">
-                      <source class="rounded-circle lazyload" width="300" data-srcset="assets/img/ProfilePhoto.png" type="image/jpeg">
-                      <img class="rounded-circle lazyload" width="300" data-src="assets/img/ProfilePhoto.png" alt="Picture of me.">
+                        <source srcset="assets/img/ProfilePhoto.webp" type="image/webp">
+                        <source srcset="assets/img/ProfilePhoto.png" type="image/png">
+                        <img src="assets/img/ProfilePhoto.png" 
+                             alt="Profile picture of Lukas Folle, Machine Learning Engineer specializing in Medical AI" 
+                             class="rounded-full shadow-lg mx-auto w-48 h-48 object-cover"
+                             width="192" 
+                             height="192"
+                             loading="lazy">
                     </picture>
-                  </div>
-                  <!-- Masthead Heading-->
-                  <h1 class="masthead-heading text-uppercase mb-0">Lukas Folle</h1>
-                  <!-- Icon Divider-->
+                </div>
+                <div class="md:w-2/3 md:pl-10">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-4 section-title">About Me</h2>
+                    <p class="text-lg text-gray-600 leading-relaxed mb-6">
+                        As a Machine Learning Engineer and recent PhD graduate (Dr. Ing.), I am driven by a profound interest in applying artificial intelligence to tackle complex challenges in the medical domain. My expertise lies in architecting and implementing deep learning solutions for medical imaging, with the goal of significantly improving diagnostic processes and patient outcomes. I am deeply involved int the entire lifecycle of AI development, from research and sophisticated model design to robustly integrating these solutions into production environments.
+                    </p>
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-3 section-title">My Approach to Medical AI</h3>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        I believe in a collaborative, data-driven approach, working closely with clinicians to ensure AI tools are not only technologically advanced but also clinically relevant, interpretable, and seamlessly integrated into existing workflows. My focus is on creating solutions that empower medical professionals and lead to measurable improvements, prioritizing real-world impact.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-                  <!-- Masthead Subheading-->
-                  <p class="masthead-subheading font-weight-light mb-0">Machine Learning Engineer & PhD Student - AI in Medicine</p>
-              </div>
-              <div class="col-md-6 col-lg-12 mb-5">
-                <p class="lead">I like to train neural networks on medical data.</p>
-                <div class="divider-custom-icon">
-                  <i class="fas fa-robot"></i>
-                  <i class="fas fa-brain"></i>
-                  <i class="fas fa-vial"></i>
+        <!-- Career Section -->
+        <section id="career" class="fade-in mb-20">
+            <div class="text-center mb-12">
+                 <div class="flex justify-center items-center gap-4">
+                     <svg class="w-8 h-8 icon-color" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.07a2.25 2.25 0 0 1-2.25 2.25H5.92a2.25 2.25 0 0 1-2.25-2.25v-4.07a2.25 2.25 0 0 1 .92-1.75l.205-.137a2.25 2.25 0 0 0 1.121-.67l.205-.342a2.25 2.25 0 0 1 2.121-1.34H15.92a2.25 2.25 0 0 1 2.121 1.34l.205.342a2.25 2.25 0 0 0 1.12.67l.206.137a2.25 2.25 0 0 1 .92 1.75Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25V4.125a2.25 2.25 0 0 0-2.25-2.25H8.92a2.25 2.25 0 0 0-2.25 2.25v4.125" /></svg>
+                    <h2 class="text-3xl font-bold section-title">Career Journey</h2>
                 </div>
-              </div>
             </div>
-          </div>
-        </header>
-        <!-- Portfolio Section-->
-        <section class="page-section portfolio" id="portfolio">
-            <div class="container">
-                <!-- Portfolio Grid Items-->
-                <div class="row">
-                    <ul class="timeline">
-                      <li class="timeline-inverted">
-                        <div class="timeline-badge">
-                          <picture>
-                            <source class="img-fluid rounded mb-5 lazyload" width="50" data-srcset="assets/img/snkeos.webp" type="image/webp">
-                            <source class="img-fluid rounded mb-5 lazyload" width="50" data-srcset="assets/img/snkeos.png" type="image/jpeg">
-                            <img class="img-fluid rounded mb-5 lazyload" width="50" data-src="assets/img/snkeos.png" alt="Fau icon.">
-                          </picture>
-                       </div>
-                        <div class="timeline-panel">
-                          <div class="timeline-heading">
-                            <h4 class="timeline-title">Machine Learning Engineer at SnkeOS GmbH (Munich, Germany)</h4>
-                            <p><small class="text-muted">2023 - today</small></p>
-                          </div>
-                          <div class="timeline-body">
-                            <p>As a Machine Learning Engineer at SnkeOS, a subsidary of BrainLab AG, I am developing deep learning applications for medical images. In addition to research into new model architectures, I am also integrating the resulting networks into a production environment.</p>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="timeline-badge">
-                          <picture>
-                            <source class="img-fluid rounded mb-5 lazyload" width="50" data-srcset="assets/img/fau.webp" type="image/webp">
-                            <source class="img-fluid rounded mb-5 lazyload" width="50" data-srcset="assets/img/fau.png" type="image/jpeg">
-                            <img class="img-fluid rounded mb-5 lazyload" width="50" data-src="assets/img/fau.png" alt="Fau icon.">
-                          </picture>
-                       </div>
-                        <div class="timeline-panel">
-                          <div class="timeline-heading">
-                            <h4 class="timeline-title">PhD Student at the Pattern Recognitions Lab at FAU (Erlangen, Germany)</h4>
-                            <p><small class="text-muted">2020 - today</small></p>
-                          </div>
-                          <div class="timeline-body">
-                            <p>In my PhD I am working on the detection of arthritis in medical imaging data and clinical data. Especially, the collaboration with the clinic in Erlangen is a very interesting part of the PhD. The tools developed can be tested directly in a clinical context and the feedback from the clinicians really motivates me.</p>
-                          </div>
-                        </div>
-                      </li>
-                     <li class="timeline-inverted">
-                       <div class="timeline-badge">
-                         <picture>
-                           <source class="img-fluid rounded mb-5 lazyload" width="50" data-srcset="assets/img/fau.webp" type="image/webp">
-                           <source class="img-fluid rounded mb-5 lazyload" width="50" data-srcset="assets/img/fau.png" type="image/jpeg">
-                           <img class="img-fluid rounded mb-5 lazyload" width="50" data-src="assets/img/fau.png" alt="Fau icon.">
-                         </picture>
-                       </div>
-                       <div class="timeline-panel">
-                         <div class="timeline-heading">
-                           <h4 class="timeline-title">Master Thesis at FAU (Erlangen, Germany)</h4>
-                           <p><small class="text-muted">Feb. 2020 - Jul. 2020</small></p>
-                         </div>
-                         <div class="timeline-body">
-                           <p>In my master thesis the I worked on MRI data of the shoulder to identify pathologies using an automated system. For this purpose, a special loss function that converges on high class imbalance was developed. Additionally, I developed a special architecture that could fuse spatial information about the pathology into the classification network. Different neural network architectures and training schemes were compared finally.</p>
-                         </div>
-                       </div>
-                     </li>
-                     <li>
-                       <div class="timeline-badge">
-                         <picture>
-                           <source class="img-fluid rounded mb-5 lazyload" width="50" data-srcset="assets/img/siemens_health.webp" type="image/webp">
-                           <source class="img-fluid rounded mb-5 lazyload" width="50" data-srcset="assets/img/siemens_health.png" type="image/jpeg">
-                           <img class="img-fluid rounded mb-5 lazyload" width="50" data-src="assets/img/siemens_health.png" alt="Siemens healthineers icon.">
-                         </picture>
-                       </div>
-                       <div class="timeline-panel">
-                         <div class="timeline-heading">
-                           <h4 class="timeline-title">Internship at Siemens Healthineers (Princeton, NJ, US)</h4>
-                           <p><small class="text-muted">Oct. 2019 - Apr. 2020</small></p>
-                         </div>
-                         <div class="timeline-body">
-                           <p>During my internship in Princeton, NJ, I was working in a team of Data Scientists on AI systems for the automated assessment of pathologies in MRI scans.</p>
-                         </div>
-                       </div>
-                     </li>
-                     <li class="timeline-inverted">
-                       <div class="timeline-badge">
-                         <picture>
-                           <source class="img-fluid rounded mb-5 lazyload" width="50" data-srcset="assets/img/siemens_health.webp" type="image/webp">
-                           <source class="img-fluid rounded mb-5 lazyload" width="50" data-srcset="assets/img/siemens_health.png" type="image/jpeg">
-                           <img class="img-fluid rounded mb-5 lazyload" width="50" data-src="assets/img/siemens_health.png" alt="Siemens healthineers icon.">
-                         </picture>
-                       </div>
-                       <div class="timeline-panel">
-                         <div class="timeline-heading">
-                           <h4 class="timeline-title">Working Student at Siemens Healthineers (Forchheim, Germany)</h4>
-                           <p><small class="text-muted">Jan. 2019 - Oct. 2019</small></p>
-                         </div>
-                         <div class="timeline-body">
-                           <p>In my part-time working student position in a software development team, we were working on automated segmentation of non-patient structures in CT scans using deep learning methods. In addition to running neural network experiments, we also annotated the data using Siemens' syngo.via.</p>
-                         </div>
-                       </div>
-                     </li>
-                     <li>
-                       <div class="timeline-badge">
-                         <picture>
-                           <source class="img-fluid rounded mb-5 lazyload" width="50" data-srcset="assets/img/draeger.webp" type="image/webp">
-                           <source class="img-fluid rounded mb-5 lazyload" width="50" data-srcset="assets/img/draeger.png" type="image/jpeg">
-                           <img class="img-fluid rounded mb-5 lazyload" width="50" data-src="assets/img/draeger.png" alt="Draeger icon.">
-                         </picture>
-                      </div>
-                       <div class="timeline-panel">
-                         <div class="timeline-heading">
-                           <h4 class="timeline-title">Working Student at Dräger (Lübeck, Germany)</h4>
-                           <p><small class="text-muted">Feb. 2018 - Apr. 2018</small></p>
-                         </div>
-                         <div class="timeline-body">
-                           <p>During my first working student position at a medical device manufacturer, I designed electronic circuits for the flow measurements of neonatal ventilators. Additionally, I could get a hands-on experience evaluating different sensor statistics in a controlled environment.</p>
-                         </div>
-                       </div>
-                     </li>
-                     <li class="timeline-inverted">
-                       <div class="timeline-badge">
-                         <picture>
-                           <source class="img-fluid rounded mb-5 lazyload" width="50" data-srcset="assets/img/draeger.webp" type="image/webp">
-                           <source class="img-fluid rounded mb-5 lazyload" width="50" data-srcset="assets/img/draeger.png" type="image/jpeg">
-                           <img class="img-fluid rounded mb-5 lazyload" width="50" data-src="assets/img/draeger.png" alt="Draeger icon.">
-                         </picture>
-                       </div>
-                       <div class="timeline-panel">
-                         <div class="timeline-heading">
-                           <h4 class="timeline-title">Internship at Dräger (Lübeck, Germany)</h4>
-                           <p><small class="text-muted">Oct. 2017 - Jan. 2018</small></p>
-                         </div>
-                         <div class="timeline-body">
-                           <p>At my internship at Dräger I worked on the modularization of anesthesia machines using network-connected microcontrollers and programmed the controllers in C.</p>
-                         </div>
-                       </div>
-                     </li>
-                     <li>
-                       <div class="timeline-badge">
-                         <picture>
-                           <source class="img-fluid rounded mb-5 lazyload" width="50" data-srcset="assets/img/uzl.webp" type="image/webp">
-                           <source class="img-fluid rounded mb-5 lazyload" width="50" data-srcset="assets/img/uzl.png" type="image/jpeg">
-                           <img class="img-fluid rounded mb-5 lazyload" width="50" data-src="assets/img/uzl.png" alt="UzL icon.">
-                         </picture>
-                       </div>
-                       <div class="timeline-panel">
-                         <div class="timeline-heading">
-                           <h4 class="timeline-title">Bachelor Studies at Lübeck University (Lübeck, Germany)</h4>
-                           <p><small class="text-muted">2014 - 2017</small></p>
-                         </div>
-                         <div class="timeline-body">
-                           <p>In my bachelor studies, I learned the anatomical and physiological basics of the human. In addition to the engineering basics, I also learned programming during my bachelor's.</p>
-                         </div>
-                       </div>
-                     </li>
-                  </ul>
+            <div class="space-y-8">
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold">Advanced Machine Learning Engineer</h3>
+                    <p class="text-md font-medium">Snke OS GmbH - a Brainlab subsidiary | Munich, Germany</p>
+                    <p class="text-sm text-gray-500 mb-3">March 2023 - Present</p>
+                    <ul class="text-gray-600 space-y-1">
+                        <li>Leading two machine learning projects focused on different tasks in CT/MR scans.</li>
+                        <li>Developing foundation models for MR images, trained on large datasets for use across multiple teams.</li>
+                        <li>Leading data annotation campaigns with external companies, including defining annotation guidelines.</li>
+                        <li>Core contributor to the machine learning software platform, ensuring structured and repeatable ML results through integration of modern development tools.</li>
+                        <li>Supervising a research collaboration with CAMP Lab, TUM, for synthetic data generation and segmentation.</li>
+                    </ul>
+                </div>
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold">PhD Student</h3>
+                    <p class="text-md font-medium">Pattern Recognition Lab (Prof. Maier), Friedrich-Alexander-Universität Erlangen-Nürnberg | Erlangen, Germany</p>
+                    <p class="text-sm text-gray-500 mb-3">August 2020 - November 2023</p>
+                    <ul class="text-gray-600 space-y-1">
+                        <li>Doctoral research on "Detection and quantization of rheumatic diseases using deep learning for various imaging modalities."</li>
+                        <li>Published research in well-recognized scientific journals and presented at international conferences.</li>
+                        <li>Awarded for best work and presentation at QMSKI 2022 in the Netherlands.</li>
+                        <li>Explored side topic: Training of 2D diffusion models for generation of synthetic breast MRI and X-ray images.</li>
+                        <li>Served as a Tutor for the Deep Learning course.</li>
+                        <li>My doctoral work culminated in the 'DeepNAPSI' tool (featured below), demonstrating a novel application of AI for psoriasis assessment.</li>
+                    </ul>
+                </div>
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold">Intern in Medical Technology R&D</h3>
+                    <p class="text-md font-medium">Siemens Healthineers | Princeton, USA</p>
+                    <p class="text-sm text-gray-500 mb-3">October 2019 - April 2020</p>
+                    <ul class="text-gray-600 space-y-1">
+                        <li>Worked on the classification of Rotator Cuff tears in MRI using Neural Networks.</li>
+                        <li>Developed software for the automatic evaluation of radiologists' annotations.</li>
+                        <li>Focused on programming with clean code principles.</li>
+                    </ul>
+                </div>
+                 <div class="card p-6">
+                    <h3 class="text-xl font-bold">Working Student in Medical Technology Development</h3>
+                    <p class="text-md font-medium">Siemens Healthineers | Forchheim, Germany</p>
+                    <p class="text-sm text-gray-500 mb-3">January 2019 - October 2019</p>
+                    <ul class="text-gray-600 space-y-1">
+                        <li>Contributed to the annotation of medical images.</li>
+                        <li>Trained neural networks for patient table segmentation in CT images.</li>
+                        <li>Participated in joint evaluation of project progress within the team.</li>
+                    </ul>
+                </div>
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold">Intern and Working Student in Medical Technology R&D</h3>
+                    <p class="text-md font-medium">Dräger Medizintechnik | Lübeck, Germany</p>
+                    <p class="text-sm text-gray-500 mb-3">October 2017 - April 2018</p>
+                    <ul class="text-gray-600 space-y-1">
+                        <li>Developed prototypes for the ventilation of infants.</li>
+                        <li>Programmed microcontrollers for medical devices.</li>
+                        <li>Conducted system modeling of gas mixtures for anesthesia machines.</li>
+                    </ul>
                 </div>
             </div>
         </section>
-        <!-- Publications Section-->
-        <section class="page-section bg-primary text-white mb-0" id="publications">
-            <div class="container">
-                <!-- About Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-white"><u><a href="https://scholar.google.com/citations?user=KMXsNToAAAAJ">Publications</a></u></h2>
-            </div>
-        </section>
-        <!-- Skills Section-->
-        <section class="page-section bg-white text-primary mb-0" id="skills">
-            <div class="container">
-                <!-- About Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-primary">Skills and Interests</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-code"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- About Section Content-->
-                <div class="row">
-                    <div class="col-lg-4 ml-auto">
-                      <p class="lead">Programming in Python, Matlab, C++ and Java</p>
-                      <p class="lead">Strong background in deep learning with Pytorch and Tensorflow (Contributor)</p>
-                      <p class="lead">Image processing and data base managment</p>
-                    </div>
-                    <div class="col-lg-4 mr-auto">
-                      <p class="lead">German native speaker</p>
-                      <p class="lead">Proficient English</p>
-                      <p class="lead">Working knowledge in Spanish</p>
-                    </div>
-                    <div class="col-lg-4 mr-auto">
-                      <p class="lead">Climbing boulder</p>
-                      <p class="lead">Enthusiastic skier</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Footer-->
-        <footer class="footer text-center">
-            <div class="container">
-                <div class="row">
-                    <!-- Footer Location-->
-                    <div class="col-lg-6 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Contact Me</h4>
-                        <p class="lead mb-0">
-                          <a class="btn btn-outline-light" href = "mailto: folle.lukas@gmail.com">folle.lukas@gmail.com</a>
-                        </p>
-                    </div>
-                    <!-- Footer Social Icons-->
-                    <div class="col-lg-6 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Around the Web</h4>
-                        <a class="btn btn-outline-light btn-social mx-1" target="_blank" aria-label="LinkedIn" rel="noopener" href="https://www.linkedin.com/in/lukas-folle/"><i alt="" class="fab fa-fw fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" target="_blank" aria-label="Twitter" rel="noopener" href="https://twitter.com/lkasder?lang=en"><i alt="" class="fab fa-fw fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" target="_blank" aria-label="Github" rel="noopener" href="https://github.com/lukasfolle"><i alt="" class="fab fa-fw fa-github"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" target="_blank" aria-label="Xing" rel="noopener" href="https://www.xing.com/profile/Lukas_Folle2"><i alt="" class="fab fa-fw fa-xing-square"></i></a>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- Copyright Section-->
-        <div class="copyright py-4 text-center text-white">
-            <div class="container"><small id="copyright">Copyright © Lukas Folle </small></div>
-        </div>
-        <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
-        <div class="scroll-to-top d-lg-none position-fixed">
-            <a class="js-scroll-trigger d-block text-center text-white rounded" aria-label="Top" href="#page-top"><i class="fa fa-chevron-up"></i></a>
-        </div>
 
-        <!-- Bootstrap core JS-->
-        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <!-- Core theme JS-->
-        <script defer src="js/scripts.js"></script>
-        <!-- Copyright current year-->
-        <div>
-            <span id="copyright_js">
-                <script async>
-                document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
-              </script>
-            </span>
+        <!-- Education Section -->
+        <section id="education" class="fade-in mb-20">
+             <div class="text-center mb-12">
+                <div class="flex justify-center items-center gap-4">
+                    <svg class="w-8 h-8 icon-color" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 0 1 6 0v8.25a3 3 0 0 1-3 3Z" /></svg>
+                    <h2 class="text-3xl font-bold section-title">Education</h2>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold">Doctor of Philosophy (Dr. Ing.)</h3>
+                    <p class="text-md font-medium">Friedrich-Alexander-Universität Erlangen-Nürnberg</p>
+                    <p class="text-sm text-gray-500 mb-2">2020 - 2023</p>
+                    <p class="text-gray-600">Thesis: Detection and quantization of rheumatic diseases using deep learning for various imaging modalities.</p>
+                    <p class="text-sm text-gray-500 mt-1">Final Grade: Very Good</p>
+                </div>
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold">Master of Science, Medical Engineering</h3>
+                    <p class="text-md font-medium">Friedrich-Alexander-Universität Erlangen-Nürnberg</p>
+                    <p class="text-sm text-gray-500 mb-2">2017 - 2020</p>
+                    <p class="text-gray-600">Thesis: Classification of Rotator Cuff tears in MRI using Neural Networks.</p>
+                    <p class="text-gray-600 mt-1">Research Project Publication: Dilated deeply supervised networks for hippocampus segmentation in MRI.</p>
+                    <p class="text-sm text-gray-500 mt-1">Final Grade: 1.3</p>
+                </div>
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold">Bachelor of Science, Medical Engineering</h3>
+                    <p class="text-md font-medium">Universität zu Lübeck</p>
+                    <p class="text-sm text-gray-500 mb-2">2014 - 2017</p>
+                    <p class="text-gray-600">Thesis: Development of a module for mixing gases for a modularized anesthesia machine.</p>
+                    <p class="text-sm text-gray-500 mt-1">Final Grade: 1.7</p>
+                </div>
+                 <div class="card p-6">
+                    <h3 class="text-xl font-bold">Abitur</h3>
+                    <p class="text-md font-medium">Gymnasium Ernestinum Celle</p>
+                    <p class="text-sm text-gray-500 mb-2">2006 - 2014</p>
+                    <p class="text-sm text-gray-500">Final Grade: 2.4</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PhD Project Demo Section -->
+        <section id="phd-demo" class="fade-in mb-20">
+            <div class="text-center mb-12">
+                <div class="flex justify-center items-center gap-4">
+                    <svg class="w-8 h-8 icon-color" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z" />
+                    </svg>
+                    <h2 class="text-3xl font-bold section-title">PhD Project Highlight: DeepNAPSI</h2>
+                </div>
+            </div>
+            <p class="text-lg text-gray-600 leading-relaxed mb-4 text-center md:max-w-3xl mx-auto">
+                This demo showcases 'DeepNAPSI', a key project from my PhD focused on the "Detection and quantization of rheumatic diseases". We employed deep learning techniques to automatically segment nail regions from hand photographs. These extracted nail images are then individually processed by a classification network to determine the Nail Psoriasis Severity Index (NAPSI) score for each nail. Finally, the application aggregates these individual scores to calculate the total NAPSI score for the patient, providing a quantitative measure of psoriasis severity in the nails.
+            </p>
+             <p class="text-lg text-gray-600 leading-relaxed mb-8 text-center md:max-w-3xl mx-auto">
+                DeepNAPSI is a prime example of my commitment to translating complex research into user-friendly tools that address real clinical needs and have the potential to directly benefit patient assessment and treatment strategies.
+            </p>
+            <div class="card p-6 flex justify-center">
+                <iframe
+                    src="https://lfolle-deepnapsi.hf.space"
+                    frameborder="0"
+                    style="width: 100%; max-width: 850px; height: 450px; min-height: 450px; border: none;"
+                    title="PhD Project Demo - DeepNAPSI"
+                    allow="accelerometer; ambient-light-sensor; autoplay; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+                    sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts"
+                    loading="lazy"
+                ></iframe>
+            </div>
+        </section>
+
+        <!-- Personal Section -->
+        <section id="personal" class="fade-in">
+             <div class="text-center mb-12">
+                 <div class="flex justify-center items-center gap-4">
+                    <svg class="w-8 h-8 icon-color" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z" /></svg>
+                    <h2 class="text-3xl font-bold section-title">Technical Skills & Personal Interests</h2>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold mb-4">Technical Skills</h3>
+                    <p class="text-gray-600 mb-3">I leverage a diverse technical toolkit to develop and deploy robust AI solutions in the medical domain:</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">PyTorch Lightning</span><span class="tag">Tensorflow</span><span class="tag">ClearML</span><span class="tag">Deep Learning</span><span class="tag">Medical Image Analysis</span><span class="tag">Computer Vision</span><span class="tag">C++</span><span class="tag">Git</span><span class="tag">Docker</span><span class="tag">SQL</span><span class="tag">Slurm</span><span class="tag">Condor</span><span class="tag">AWS</span><span class="tag">Scrum</span>
+                    </div>
+                </div>
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold mb-4">Languages & Hobbies</h3>
+                     <div class="mb-4">
+                        <p class="text-gray-600"><strong class="font-medium">German:</strong> Native</p>
+                        <p class="text-gray-600"><strong class="font-medium">English:</strong> Full professional proficiency</p>
+                        <p class="text-gray-600"><strong class="font-medium">Spanish:</strong> Novice</p>
+                    </div>
+                    <div>
+                         <p class="text-gray-600">Beyond technology, I enjoy Swimming, Running, Road biking, and Ski touring. These activities reflect the dedication and endurance I bring to my professional work.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white mt-20 transition">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <div class="flex justify-center space-x-6 mb-4">
+                 <a href="https://de.linkedin.com/in/lukas-folle" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-800 transition" aria-label="Lukas Folle on LinkedIn">
+                    <span class="sr-only">LinkedIn</span>
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="https://github.com/lukasfolle" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-800 transition" aria-label="Lukas Folle on GitHub">
+                     <span class="sr-only">GitHub</span>
+                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
+                </a>
+            </div>
+            <p class="text-gray-600">&copy; 2025 Lukas Folle. All Rights Reserved.</p>
         </div>
-    </body>
+    </footer>
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mainNavLinks = document.getElementById('main-nav-links');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        if (mobileMenuButton && mainNavLinks && hamburgerIcon && closeIcon) {
+            mobileMenuButton.addEventListener('click', () => {
+                const menuIsCurrentlyHidden = mainNavLinks.classList.contains('hidden');
+                
+                mainNavLinks.classList.toggle('hidden');
+                hamburgerIcon.classList.toggle('hidden'); 
+                closeIcon.classList.toggle('hidden');   
+                
+                if (menuIsCurrentlyHidden) { // Menu was hidden, now it's open
+                    mobileMenuButton.setAttribute('aria-expanded', 'true');
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+                } else { // Menu was open, now it's closed
+                    mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = ''; // Restore scrolling
+                }
+            });
+
+            const menuLinks = mainNavLinks.querySelectorAll('a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    // Only try to close if the mobile menu is potentially open (i.e. on smaller screens)
+                    if (window.innerWidth < 768) { // 768px is Tailwind's 'md' breakpoint
+                        // Check if the menu is actually open before trying to close it
+                        if (!mainNavLinks.classList.contains('hidden')) {
+                            mainNavLinks.classList.add('hidden');
+                            hamburgerIcon.classList.remove('hidden');
+                            closeIcon.classList.add('hidden');
+                            mobileMenuButton.setAttribute('aria-expanded', 'false');
+                            document.body.style.overflow = ''; // Restore scrolling
+                        }
+                    }
+                });
+            });
+        }
+    </script>
+</body>
 </html>
