@@ -78,7 +78,7 @@
         .dark h1, .dark h2, .dark h3, .dark .section-title {
             color: #ffffff;
         }
-         .dark p, .dark a {
+         .dark p, .dark a, .dark .text-gray-600 { /* Ensure paragraph text in dark mode is also updated */
             color: #cbd5e0;
         }
         .dark a:hover {
@@ -113,6 +113,13 @@
         themeSwitch();
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', themeSwitch);
     </script>
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://esm.sh/react@^19.1.0/"
+      }
+    }
+    </script>
 </head>
 <body class="antialiased">
 
@@ -120,9 +127,10 @@
     <header class="bg-white shadow-md transition sticky top-0 z-10">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold text-gray-800">Lukas Folle</h1>
-            <div class="flex space-x-6">
+            <div class="flex space-x-4 md:space-x-6">
                 <a href="#career" class="text-gray-600 hover:text-gray-800 transition">Career</a>
                 <a href="#education" class="text-gray-600 hover:text-gray-800 transition">Education</a>
+                <a href="#phd-demo" class="text-gray-600 hover:text-gray-800 transition">PhD Demo</a>
                 <a href="#personal" class="text-gray-600 hover:text-gray-800 transition">Personal</a>
             </div>
         </nav>
@@ -170,13 +178,13 @@
                     <h3 class="text-xl font-bold">Machine Learning Engineer</h3>
                     <p class="text-md font-medium">Snke | Munich, Germany</p>
                     <p class="text-sm text-gray-500 mb-4">March 2023 - Present</p>
-                    <p>Developing production-level deep learning applications for medical images. My role involves researching novel model architectures and integrating them into a robust production environment.</p>
+                    <p class="text-gray-600">Developing production-level deep learning applications for medical images. My role involves researching novel model architectures and integrating them into a robust production environment.</p>
                 </div>
                 <div class="card p-6">
                     <h3 class="text-xl font-bold">PhD Student</h3>
                     <p class="text-md font-medium">Pattern Recognition Lab, Friedrich-Alexander-Universität Erlangen-Nürnberg | Erlangen, Germany</p>
                     <p class="text-sm text-gray-500 mb-4">August 2020 - November 2023</p>
-                    <p>My doctoral research focused on the detection of arthritis using medical imaging and clinical data. A key aspect was the close collaboration with clinicians to test and refine developed tools in a real-world clinical context.</p>
+                    <p class="text-gray-600">My doctoral research focused on the detection of arthritis using medical imaging and clinical data. A key aspect was the close collaboration with clinicians to test and refine developed tools in a real-world clinical context.</p>
                 </div>
             </div>
         </section>
@@ -195,20 +203,46 @@
                     <h3 class="text-xl font-bold">Doctor of Philosophy (PhD)</h3>
                     <p class="text-md font-medium">Friedrich-Alexander-Universität Erlangen-Nürnberg</p>
                     <p class="text-sm text-gray-500 mb-4">2020 - 2023</p>
-                    <p>Focused on the application of deep learning to rheumatological imaging data.</p>
+                    <p class="text-gray-600">Focused on the application of deep learning to rheumatological imaging data.</p>
                 </div>
                 <div class="card p-6">
                     <h3 class="text-xl font-bold">Master of Science, Medical Engineering</h3>
                     <p class="text-md font-medium">Friedrich-Alexander-Universität Erlangen-Nürnberg</p>
                     <p class="text-sm text-gray-500 mb-4">2017 - 2020</p>
-                    <p>Specialized in medical image processing and pattern recognition.</p>
+                    <p class="text-gray-600">Specialized in medical image processing and pattern recognition.</p>
                 </div>
                 <div class="card p-6">
                     <h3 class="text-xl font-bold">Bachelor of Science, Medical Engineering</h3>
                     <p class="text-md font-medium">Universität zu Lübeck</p>
                     <p class="text-sm text-gray-500 mb-4">2014 - 2017</p>
-                    <p>Gained a foundational understanding of engineering principles, programming, and human anatomy.</p>
+                    <p class="text-gray-600">Gained a foundational understanding of engineering principles, programming, and human anatomy.</p>
                 </div>
+            </div>
+        </section>
+
+        <!-- PhD Project Demo Section -->
+        <section id="phd-demo" class="fade-in mb-20">
+            <div class="text-center mb-12">
+                <div class="flex justify-center items-center gap-4">
+                    <svg class="w-8 h-8 icon-color" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z" />
+                    </svg>
+                    <h2 class="text-3xl font-bold section-title">PhD Project Demo</h2>
+                </div>
+            </div>
+            <p class="text-lg text-gray-600 leading-relaxed mb-8 text-center md:max-w-3xl mx-auto">
+                This demo showcases the final project of my PhD. We employed deep learning techniques to automatically segment the nail regions from photographs of hands. These extracted nail images are then individually processed by a classification network to determine the Nail Psoriasis Severity Index (NAPSI) score for each nail. Finally, the application aggregates these individual scores to calculate the total NAPSI score for the patient, providing a quantitative measure of psoriasis severity in the nails.
+            </p>
+            <div class="card p-6 flex justify-center">
+                <iframe
+                    src="https://lfolle-deepnapsi.hf.space"
+                    frameborder="0"
+                    style="width: 100%; max-width: 850px; height: 450px; min-height: 450px; border: none;"
+                    title="PhD Project Demo - DeepNAPSI"
+                    allow="accelerometer; ambient-light-sensor; autoplay; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+                    sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts"
+                    loading="lazy"
+                ></iframe>
             </div>
         </section>
 
@@ -232,12 +266,12 @@
                 <div class="card p-6">
                     <h3 class="text-xl font-bold mb-4">Languages & Hobbies</h3>
                      <div class="mb-4">
-                        <p><strong class="font-medium">German:</strong> Native</p>
-                        <p><strong class="font-medium">English:</strong> Proficient</p>
-                        <p><strong class="font-medium">Spanish:</strong> Working Knowledge</p>
+                        <p class="text-gray-600"><strong class="font-medium">German:</strong> Native</p>
+                        <p class="text-gray-600"><strong class="font-medium">English:</strong> Proficient</p>
+                        <p class="text-gray-600"><strong class="font-medium">Spanish:</strong> Working Knowledge</p>
                     </div>
                     <div>
-                         <p>In my free time, I am an enthusiastic skier and enjoy bouldering and climbing.</p>
+                         <p class="text-gray-600">In my free time, I am an enthusiastic skier and enjoy bouldering and climbing.</p>
                     </div>
                 </div>
             </div>
@@ -263,6 +297,6 @@
             <p class="text-gray-600">&copy; 2025 Lukas Folle. All Rights Reserved.</p>
         </div>
     </footer>
-
+    <script src="index.tsx" type="module"></script>
 </body>
 </html>
