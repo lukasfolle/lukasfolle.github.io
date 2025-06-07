@@ -73,13 +73,13 @@
             color: #e2e8f0;
         }
         .dark header, .dark footer {
-            background-color: #2d3748;
+            background-color: #2d3748; /* Used for mobile menu background as well */
             border-color: #4a5568;
         }
         .dark h1, .dark h2, .dark h3, .dark .section-title, .dark .hero-title {
             color: #ffffff;
         }
-         .dark p, .dark li, .dark a, .dark .text-gray-600, .dark .hero-subtitle, .dark .text-gray-500 { /* Ensure paragraph, list, and other text in dark mode is also updated */
+         .dark p, .dark li, .dark a, .dark .text-gray-600, .dark .hero-subtitle, .dark .text-gray-500 {
             color: #cbd5e0;
         }
         .dark a:hover {
@@ -109,6 +109,233 @@
         .card ul li {
             margin-bottom: 0.25rem;
         }
+
+        /* Print CV Header - Hidden by default, shown for print */
+        .print-cv-header {
+            display: none;
+        }
+
+        @media print {
+            body {
+                font-family: 'Times New Roman', Times, serif !important; /* More traditional CV font */
+                background-color: #ffffff !important;
+                color: #000000 !important;
+                font-size: 10pt !important;
+                margin: 20mm !important; /* Standard A4 margins */
+                padding: 0 !important;
+                -webkit-print-color-adjust: exact !important; /* Ensure colors print in Chrome/Safari */
+                print-color-adjust: exact !important; /* Standard */
+            }
+
+            header, footer, #phd-demo, nav > div:not(#main-nav-links), #mobile-menu-button /* Nav links container and mobile button */ {
+                display: none !important;
+            }
+             #main-nav-links { /* Ensure nav links are hidden in print if they were somehow visible */
+                display: none !important;
+            }
+            
+            .text-center .flex.justify-center.items-center.gap-4 > svg { /* Decorative icons next to section titles */
+                display: none !important;
+            }
+            .text-center .flex.justify-center.items-center.gap-4 { /* Container for icon + title */
+                justify-content: flex-start !important; /* Align title left */
+                margin-bottom: 10px !important; /* Ensure consistent spacing after title */
+            }
+            .text-center.mb-12 {
+                margin-bottom: 1rem !important; /* Reduce bottom margin for section title containers */
+            }
+
+
+            .print-cv-header {
+                display: block !important;
+                text-align: left;
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid #000;
+            }
+            .print-cv-header h1 {
+                font-family: 'Times New Roman', Times, serif !important;
+                font-size: 18pt !important;
+                font-weight: bold !important;
+                color: #000 !important;
+                margin-bottom: 5px !important;
+            }
+            .print-cv-header p {
+                font-family: 'Times New Roman', Times, serif !important;
+                font-size: 10pt !important;
+                color: #000 !important;
+                margin: 2px 0 !important;
+            }
+            .print-cv-header a {
+                color: #000 !important;
+                text-decoration: underline !important;
+            }
+
+            #hero {
+                text-align: left !important;
+                padding: 0 0 15px 0 !important;
+                margin-bottom: 15px !important;
+            }
+
+            .hero-title {
+                font-family: 'Times New Roman', Times, serif !important;
+                font-size: 16pt !important;
+                text-align: left !important;
+                color: #000000 !important;
+                margin-bottom: 5px !important;
+            }
+            .hero-subtitle {
+                font-family: 'Times New Roman', Times, serif !important;
+                font-size: 10pt !important;
+                text-align: left !important;
+                color: #000000 !important;
+                max-width: 100% !important;
+                line-height: 1.4 !important;
+            }
+
+            main.container {
+                padding: 0 !important;
+                margin: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            
+            section {
+                margin-bottom: 20px !important; /* Increased space between sections */
+                page-break-inside: avoid !important;
+            }
+
+            #about .flex-col, #about .md\:flex-row { /* About me section with image and text */
+                flex-direction: column !important; /* Stack image and text */
+                align-items: flex-start !important;
+            }
+            #about picture, #about img {
+                display: none !important; /* Hide profile image for a more traditional CV feel */
+            }
+            #about .md\:w-1\/3, #about .md\:w-2\/3 {
+                width: 100% !important;
+                padding-left: 0 !important;
+                text-align: left !important;
+            }
+            #about .md\:w-2\/3 h2.section-title { /* About me title */
+                font-family: 'Times New Roman', Times, serif !important;
+                font-size: 14pt !important;
+                margin-top: 0 !important; /* Remove top margin if image is hidden */
+                 margin-bottom: 8px !important;
+            }
+            #about .md\:w-2\/3 h3.section-title { /* "My Approach" title */
+                 font-family: 'Times New Roman', Times, serif !important;
+                 font-size: 12pt !important;
+                 font-weight: bold !important;
+                 margin-bottom: 5px !important;
+            }
+            #about p {
+                font-family: 'Times New Roman', Times, serif !important;
+                font-size: 10pt !important;
+                line-height: 1.4 !important;
+                margin-bottom: 10px !important;
+            }
+
+
+            .section-title {
+                font-family: 'Times New Roman', Times, serif !important;
+                font-size: 14pt !important;
+                text-align: left !important;
+                font-weight: bold !important;
+                color: #000000 !important;
+                margin-bottom: 10px !important;
+            }
+            
+            .card {
+                background-color: #ffffff !important;
+                border: 1px solid #cccccc !important;
+                box-shadow: none !important;
+                padding: 10px !important;
+                margin-bottom: 10px !important;
+                page-break-inside: avoid !important;
+                border-radius: 0 !important;
+            }
+            .card:hover {
+                transform: none !important;
+            }
+            .card h3 { /* Job titles, degree names */
+                font-family: 'Times New Roman', Times, serif !important;
+                font-size: 12pt !important;
+                font-weight: bold !important;
+                color: #000000 !important;
+                margin-bottom: 2px !important;
+            }
+            .card p, .card ul li, .card .text-gray-600, .card .text-sm.text-gray-500 {
+                font-family: 'Times New Roman', Times, serif !important;
+                font-size: 10pt !important;
+                color: #000000 !important;
+                line-height: 1.4 !important;
+                margin-bottom: 2px !important;
+            }
+            .card .text-sm.text-gray-500 { /* Dates, locations */
+                margin-bottom: 4px !important; /* More space after dates/location line */
+            }
+            .card ul {
+                padding-left: 20px !important; /* Standard bullet indentation */
+                list-style-type: disc !important;
+                margin-top: 5px !important;
+            }
+            .card ul li {
+                margin-bottom: 3px !important;
+            }
+
+            .grid, .md\:grid-cols-2 { /* For education and skills sections */
+                display: block !important; /* Stack items */
+                grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+            }
+            .grid > div.card, .md\:grid-cols-2 > div.card { /* Ensure cards in grid take full width */
+                width: 100% !important;
+                box-sizing: border-box; /* Ensure padding/border included in width */
+                margin-bottom: 10px !important;
+            }
+
+            .tag {
+                background-color: #eeeeee !important;
+                color: #000000 !important;
+                border: 1px solid #dddddd !important;
+                padding: 2px 5px !important;
+                font-size: 9pt !important;
+                border-radius: 4px !important;
+                font-family: 'Times New Roman', Times, serif !important;
+                display: inline-block;
+                margin: 2px;
+            }
+            .flex.flex-wrap.gap-2 {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5px; /* Adjust gap for print if needed */
+            }
+
+            a {
+                color: #000000 !important;
+                text-decoration: none !important; 
+            }
+            a[href^="http"]:not(.print-cv-header a):after, 
+            a[href^="mailto"]:not(.print-cv-header a):after {
+                /* content: " (" attr(href) ")"; Consider showing URLs for non-header links if desired */
+                /* font-size: 9pt; */
+            }
+            
+            .fade-in {
+                animation: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            
+            h1, h2, h3, p, li, span, div { /* Reset Inter font globally for print */
+                 font-family: 'Times New Roman', Times, serif !important;
+            }
+            .font-bold { font-weight: bold !important; }
+            .font-medium { font-weight: 500 !important; } /* Times doesn't have as many weights */
+            .leading-relaxed { line-height: 1.5 !important; }
+
+        }
+
     </style>
     <script>
         // This script runs before content render to prevent a flash of unstyled content.
@@ -132,16 +359,34 @@
 </head>
 <body class="antialiased">
 
+    <!-- CV Header for Print Only -->
+    <div class="print-cv-header">
+        <h1>Dr. Ing. Lukas Folle</h1>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/lukas-folle/" target="_blank">linkedin.com/in/lukas-folle</a></p>
+    </div>
+
+
     <!-- Header -->
-    <header class="bg-white shadow-md transition sticky top-0 z-10">
+    <header class="bg-white shadow-md transition sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold text-gray-800">Lukas Folle</h1>
-            <div class="flex space-x-4 md:space-x-6">
-                <a href="#about" class="text-gray-600 hover:text-gray-800 transition">About</a>
-                <a href="#career" class="text-gray-600 hover:text-gray-800 transition">Career</a>
-                <a href="#education" class="text-gray-600 hover:text-gray-800 transition">Education</a>
-                <a href="#phd-demo" class="text-gray-600 hover:text-gray-800 transition">PhD Demo</a>
-                <a href="#personal" class="text-gray-600 hover:text-gray-800 transition">Skills</a>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" type="button" class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white focus:outline-none" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav-links">
+                    <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+
+            <!-- Navigation Links -->
+            <div id="main-nav-links" 
+                 class="hidden absolute md:static top-[64px] left-0 w-full md:w-auto md:flex md:items-center bg-white dark:bg-[#2d3748] md:bg-transparent dark:md:bg-transparent shadow-lg md:shadow-none py-2 md:py-0 md:space-x-6">
+                <a href="#about" class="block text-center md:text-left px-6 py-3 md:p-0 text-gray-600 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition">About</a>
+                <a href="#career" class="block text-center md:text-left px-6 py-3 md:p-0 text-gray-600 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition">Career</a>
+                <a href="#education" class="block text-center md:text-left px-6 py-3 md:p-0 text-gray-600 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition">Education</a>
+                <a href="#phd-demo" class="block text-center md:text-left px-6 py-3 md:p-0 text-gray-600 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition">PhD Demo</a>
+                <a href="#personal" class="block text-center md:text-left px-6 py-3 md:p-0 text-gray-600 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition">Skills</a>
             </div>
         </nav>
     </header>
@@ -371,6 +616,46 @@
             <p class="text-gray-600">&copy; 2025 Lukas Folle. All Rights Reserved.</p>
         </div>
     </footer>
-    <script src="index.tsx" type="module"></script>
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mainNavLinks = document.getElementById('main-nav-links');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        if (mobileMenuButton && mainNavLinks && hamburgerIcon && closeIcon) {
+            mobileMenuButton.addEventListener('click', () => {
+                const menuIsCurrentlyHidden = mainNavLinks.classList.contains('hidden');
+                
+                mainNavLinks.classList.toggle('hidden');
+                hamburgerIcon.classList.toggle('hidden'); 
+                closeIcon.classList.toggle('hidden');   
+                
+                if (menuIsCurrentlyHidden) { // Menu was hidden, now it's open
+                    mobileMenuButton.setAttribute('aria-expanded', 'true');
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+                } else { // Menu was open, now it's closed
+                    mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = ''; // Restore scrolling
+                }
+            });
+
+            const menuLinks = mainNavLinks.querySelectorAll('a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    // Only try to close if the mobile menu is potentially open (i.e. on smaller screens)
+                    if (window.innerWidth < 768) { // 768px is Tailwind's 'md' breakpoint
+                        // Check if the menu is actually open before trying to close it
+                        if (!mainNavLinks.classList.contains('hidden')) {
+                            mainNavLinks.classList.add('hidden');
+                            hamburgerIcon.classList.remove('hidden');
+                            closeIcon.classList.add('hidden');
+                            mobileMenuButton.setAttribute('aria-expanded', 'false');
+                            document.body.style.overflow = ''; // Restore scrolling
+                        }
+                    }
+                });
+            });
+        }
+    </script>
 </body>
 </html>
