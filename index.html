@@ -1,21 +1,22 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Basic Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lukas Folle - Machine Learning Engineer</title>
+    <title>Lukas Folle - Machine Learning Engineer in Medical AI</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Personal website of Lukas Folle, a Machine Learning Engineer and PhD graduate specializing in AI applications for medical imaging. Explore his career, education, and projects.">
-    <meta name="keywords" content="Lukas Folle, Machine Learning Engineer, AI, Deep Learning, Medical Imaging, PhD, Pytorch, Tensorflow, Germany">
-    <link rel="canonical" href="https://lukasfolle.github.io/"> <!-- Replace with your final domain -->
+    <meta name="description" content="Personal website of Dr. Lukas Folle, a Machine Learning Engineer and PhD graduate specializing in AI applications for medical imaging and diagnostics. Explore his career, education, projects, and vision for AI in medicine.">
+    <meta name="keywords" content="Lukas Folle, Machine Learning Engineer, AI, Deep Learning, Medical Imaging, PhD, Pytorch, Tensorflow, Medical AI, Healthcare AI, Germany, Snke, Siemens Healthineers, Dräger">
+    <link rel="canonical" href="https://lukasfolle.github.io/">
 
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Lukas Folle - Machine Learning Engineer">
-    <meta property="og:description" content="Personal website of Lukas Folle, a Machine Learning Engineer specializing in AI for medical imaging.">
-    <meta property="og:image" content="https://lukasfolle.github.io/assets/img/ProfilePhoto.png"> <!-- Public URL for social sharing -->
-    <meta property="og:url" content="https://lukasfolle.github.io/"> <!-- Replace with your final domain -->
+    <meta property="og:title" content="Lukas Folle - Machine Learning Engineer in Medical AI">
+    <meta property="og:description" content="Personal website of Dr. Lukas Folle, a Machine Learning Engineer specializing in AI for medical imaging and advancing healthcare diagnostics.">
+    <meta property="og:image" content="https://lukasfolle.github.io/assets/img/ProfilePhoto.png">
+    <meta property="og:url" content="https://lukasfolle.github.io/">
     <meta property="og:type" content="website">
 
     <!-- Font Loading Optimization -->
@@ -75,10 +76,10 @@
             background-color: #2d3748;
             border-color: #4a5568;
         }
-        .dark h1, .dark h2, .dark h3, .dark .section-title {
+        .dark h1, .dark h2, .dark h3, .dark .section-title, .dark .hero-title {
             color: #ffffff;
         }
-         .dark p, .dark a, .dark .text-gray-600 { /* Ensure paragraph text in dark mode is also updated */
+         .dark p, .dark li, .dark a, .dark .text-gray-600, .dark .hero-subtitle, .dark .text-gray-500 { /* Ensure paragraph, list, and other text in dark mode is also updated */
             color: #cbd5e0;
         }
         .dark a:hover {
@@ -99,6 +100,14 @@
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+        .card ul {
+            list-style-type: disc;
+            padding-left: 1.5rem; /* Indent list items */
+            margin-top: 0.5rem;
+        }
+        .card ul li {
+            margin-bottom: 0.25rem;
         }
     </style>
     <script>
@@ -128,13 +137,24 @@
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold text-gray-800">Lukas Folle</h1>
             <div class="flex space-x-4 md:space-x-6">
+                <a href="#about" class="text-gray-600 hover:text-gray-800 transition">About</a>
                 <a href="#career" class="text-gray-600 hover:text-gray-800 transition">Career</a>
                 <a href="#education" class="text-gray-600 hover:text-gray-800 transition">Education</a>
                 <a href="#phd-demo" class="text-gray-600 hover:text-gray-800 transition">PhD Demo</a>
-                <a href="#personal" class="text-gray-600 hover:text-gray-800 transition">Personal</a>
+                <a href="#personal" class="text-gray-600 hover:text-gray-800 transition">Skills</a>
             </div>
         </nav>
     </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="py-16 md:py-24 text-center fade-in">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6 hero-title">Advancing Medical Diagnostics with Intelligent AI Solutions</h2>
+            <p class="text-xl text-gray-600 leading-relaxed md:max-w-3xl mx-auto hero-subtitle">
+                Dedicated to leveraging cutting-edge machine learning to transform medical imaging, enhance diagnostic accuracy, and ultimately improve patient care. My work bridges the gap between innovative research and practical, life-saving applications.
+            </p>
+        </div>
+    </section>
 
     <!-- Main Content -->
     <main class="container mx-auto px-6 py-12">
@@ -143,12 +163,11 @@
         <section id="about" class="fade-in mb-20">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/3 mb-8 md:mb-0 text-center">
-                    <!-- Optimized Image with WEBP fallback -->
                     <picture>
                         <source srcset="assets/img/ProfilePhoto.webp" type="image/webp">
                         <source srcset="assets/img/ProfilePhoto.png" type="image/png">
                         <img src="assets/img/ProfilePhoto.png" 
-                             alt="Profile picture of Lukas Folle, Machine Learning Engineer" 
+                             alt="Profile picture of Lukas Folle, Machine Learning Engineer specializing in Medical AI" 
                              class="rounded-full shadow-lg mx-auto w-48 h-48 object-cover"
                              width="192" 
                              height="192"
@@ -157,8 +176,12 @@
                 </div>
                 <div class="md:w-2/3 md:pl-10">
                     <h2 class="text-4xl font-bold text-gray-800 mb-4 section-title">About Me</h2>
+                    <p class="text-lg text-gray-600 leading-relaxed mb-6">
+                        As a Machine Learning Engineer and recent PhD graduate (Dr. Ing.), I am driven by a profound interest in applying artificial intelligence to tackle complex challenges in the medical domain. My expertise lies in architecting and implementing deep learning solutions for medical imaging, with the goal of significantly improving diagnostic processes and patient outcomes. I am deeply involved int the entire lifecycle of AI development, from research and sophisticated model design to robustly integrating these solutions into production environments.
+                    </p>
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-3 section-title">My Approach to Medical AI</h3>
                     <p class="text-lg text-gray-600 leading-relaxed">
-                        I am a Machine Learning Engineer and recent PhD graduate with a passion for applying artificial intelligence to solve complex problems in the medical field. My work focuses on developing deep learning applications for medical imaging, aiming to improve diagnostics and patient outcomes. I enjoy tackling challenges, from research and model architecture design to integrating solutions into production environments.
+                        I believe in a collaborative, data-driven approach, working closely with clinicians to ensure AI tools are not only technologically advanced but also clinically relevant, interpretable, and seamlessly integrated into existing workflows. My focus is on creating solutions that empower medical professionals and lead to measurable improvements, prioritizing real-world impact.
                     </p>
                 </div>
             </div>
@@ -173,18 +196,60 @@
                 </div>
             </div>
             <div class="space-y-8">
-                <!-- Career Items -->
-                 <div class="card p-6">
-                    <h3 class="text-xl font-bold">Machine Learning Engineer</h3>
-                    <p class="text-md font-medium">Snke | Munich, Germany</p>
-                    <p class="text-sm text-gray-500 mb-4">March 2023 - Present</p>
-                    <p class="text-gray-600">Developing production-level deep learning applications for medical images. My role involves researching novel model architectures and integrating them into a robust production environment.</p>
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold">Advanced Machine Learning Engineer</h3>
+                    <p class="text-md font-medium">Snke OS GmbH - a Brainlab subsidiary | Munich, Germany</p>
+                    <p class="text-sm text-gray-500 mb-3">March 2023 - Present</p>
+                    <ul class="text-gray-600 space-y-1">
+                        <li>Leading two machine learning projects focused on different tasks in CT/MR scans.</li>
+                        <li>Developing foundation models for MR images, trained on large datasets for use across multiple teams.</li>
+                        <li>Leading data annotation campaigns with external companies, including defining annotation guidelines.</li>
+                        <li>Core contributor to the machine learning software platform, ensuring structured and repeatable ML results through integration of modern development tools.</li>
+                        <li>Supervising a research collaboration with CAMP Lab, TUM, for synthetic data generation and segmentation.</li>
+                    </ul>
                 </div>
                 <div class="card p-6">
                     <h3 class="text-xl font-bold">PhD Student</h3>
-                    <p class="text-md font-medium">Pattern Recognition Lab, Friedrich-Alexander-Universität Erlangen-Nürnberg | Erlangen, Germany</p>
-                    <p class="text-sm text-gray-500 mb-4">August 2020 - November 2023</p>
-                    <p class="text-gray-600">My doctoral research focused on the detection of arthritis using medical imaging and clinical data. A key aspect was the close collaboration with clinicians to test and refine developed tools in a real-world clinical context.</p>
+                    <p class="text-md font-medium">Pattern Recognition Lab (Prof. Maier), Friedrich-Alexander-Universität Erlangen-Nürnberg | Erlangen, Germany</p>
+                    <p class="text-sm text-gray-500 mb-3">August 2020 - November 2023</p>
+                    <ul class="text-gray-600 space-y-1">
+                        <li>Doctoral research on "Detection and quantization of rheumatic diseases using deep learning for various imaging modalities."</li>
+                        <li>Published research in well-recognized scientific journals and presented at international conferences.</li>
+                        <li>Awarded for best work and presentation at QMSKI 2022 in the Netherlands.</li>
+                        <li>Explored side topic: Training of 2D diffusion models for generation of synthetic breast MRI and X-ray images.</li>
+                        <li>Served as a Tutor for the Deep Learning course.</li>
+                        <li>My doctoral work culminated in the 'DeepNAPSI' tool (featured below), demonstrating a novel application of AI for psoriasis assessment.</li>
+                    </ul>
+                </div>
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold">Intern in Medical Technology R&D</h3>
+                    <p class="text-md font-medium">Siemens Healthineers | Princeton, USA</p>
+                    <p class="text-sm text-gray-500 mb-3">October 2019 - April 2020</p>
+                    <ul class="text-gray-600 space-y-1">
+                        <li>Worked on the classification of Rotator Cuff tears in MRI using Neural Networks.</li>
+                        <li>Developed software for the automatic evaluation of radiologists' annotations.</li>
+                        <li>Focused on programming with clean code principles.</li>
+                    </ul>
+                </div>
+                 <div class="card p-6">
+                    <h3 class="text-xl font-bold">Working Student in Medical Technology Development</h3>
+                    <p class="text-md font-medium">Siemens Healthineers | Forchheim, Germany</p>
+                    <p class="text-sm text-gray-500 mb-3">January 2019 - October 2019</p>
+                    <ul class="text-gray-600 space-y-1">
+                        <li>Contributed to the annotation of medical images.</li>
+                        <li>Trained neural networks for patient table segmentation in CT images.</li>
+                        <li>Participated in joint evaluation of project progress within the team.</li>
+                    </ul>
+                </div>
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold">Intern and Working Student in Medical Technology R&D</h3>
+                    <p class="text-md font-medium">Dräger Medizintechnik | Lübeck, Germany</p>
+                    <p class="text-sm text-gray-500 mb-3">October 2017 - April 2018</p>
+                    <ul class="text-gray-600 space-y-1">
+                        <li>Developed prototypes for the ventilation of infants.</li>
+                        <li>Programmed microcontrollers for medical devices.</li>
+                        <li>Conducted system modeling of gas mixtures for anesthesia machines.</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -197,25 +262,34 @@
                     <h2 class="text-3xl font-bold section-title">Education</h2>
                 </div>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Education Items -->
-                 <div class="card p-6">
-                    <h3 class="text-xl font-bold">Doctor of Philosophy (PhD)</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold">Doctor of Philosophy (Dr. Ing.)</h3>
                     <p class="text-md font-medium">Friedrich-Alexander-Universität Erlangen-Nürnberg</p>
-                    <p class="text-sm text-gray-500 mb-4">2020 - 2023</p>
-                    <p class="text-gray-600">Focused on the application of deep learning to rheumatological imaging data.</p>
+                    <p class="text-sm text-gray-500 mb-2">2020 - 2023</p>
+                    <p class="text-gray-600">Thesis: Detection and quantization of rheumatic diseases using deep learning for various imaging modalities.</p>
+                    <p class="text-sm text-gray-500 mt-1">Final Grade: Very Good</p>
                 </div>
                 <div class="card p-6">
                     <h3 class="text-xl font-bold">Master of Science, Medical Engineering</h3>
                     <p class="text-md font-medium">Friedrich-Alexander-Universität Erlangen-Nürnberg</p>
-                    <p class="text-sm text-gray-500 mb-4">2017 - 2020</p>
-                    <p class="text-gray-600">Specialized in medical image processing and pattern recognition.</p>
+                    <p class="text-sm text-gray-500 mb-2">2017 - 2020</p>
+                    <p class="text-gray-600">Thesis: Classification of Rotator Cuff tears in MRI using Neural Networks.</p>
+                    <p class="text-gray-600 mt-1">Research Project Publication: Dilated deeply supervised networks for hippocampus segmentation in MRI.</p>
+                    <p class="text-sm text-gray-500 mt-1">Final Grade: 1.3</p>
                 </div>
                 <div class="card p-6">
                     <h3 class="text-xl font-bold">Bachelor of Science, Medical Engineering</h3>
                     <p class="text-md font-medium">Universität zu Lübeck</p>
-                    <p class="text-sm text-gray-500 mb-4">2014 - 2017</p>
-                    <p class="text-gray-600">Gained a foundational understanding of engineering principles, programming, and human anatomy.</p>
+                    <p class="text-sm text-gray-500 mb-2">2014 - 2017</p>
+                    <p class="text-gray-600">Thesis: Development of a module for mixing gases for a modularized anesthesia machine.</p>
+                    <p class="text-sm text-gray-500 mt-1">Final Grade: 1.7</p>
+                </div>
+                 <div class="card p-6">
+                    <h3 class="text-xl font-bold">Abitur</h3>
+                    <p class="text-md font-medium">Gymnasium Ernestinum Celle</p>
+                    <p class="text-sm text-gray-500 mb-2">2006 - 2014</p>
+                    <p class="text-sm text-gray-500">Final Grade: 2.4</p>
                 </div>
             </div>
         </section>
@@ -227,11 +301,14 @@
                     <svg class="w-8 h-8 icon-color" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z" />
                     </svg>
-                    <h2 class="text-3xl font-bold section-title">PhD Project Demo</h2>
+                    <h2 class="text-3xl font-bold section-title">PhD Project Highlight: DeepNAPSI</h2>
                 </div>
             </div>
-            <p class="text-lg text-gray-600 leading-relaxed mb-8 text-center md:max-w-3xl mx-auto">
-                This demo showcases the final project of my PhD. We employed deep learning techniques to automatically segment the nail regions from photographs of hands. These extracted nail images are then individually processed by a classification network to determine the Nail Psoriasis Severity Index (NAPSI) score for each nail. Finally, the application aggregates these individual scores to calculate the total NAPSI score for the patient, providing a quantitative measure of psoriasis severity in the nails.
+            <p class="text-lg text-gray-600 leading-relaxed mb-4 text-center md:max-w-3xl mx-auto">
+                This demo showcases 'DeepNAPSI', a key project from my PhD focused on the "Detection and quantization of rheumatic diseases". We employed deep learning techniques to automatically segment nail regions from hand photographs. These extracted nail images are then individually processed by a classification network to determine the Nail Psoriasis Severity Index (NAPSI) score for each nail. Finally, the application aggregates these individual scores to calculate the total NAPSI score for the patient, providing a quantitative measure of psoriasis severity in the nails.
+            </p>
+             <p class="text-lg text-gray-600 leading-relaxed mb-8 text-center md:max-w-3xl mx-auto">
+                DeepNAPSI is a prime example of my commitment to translating complex research into user-friendly tools that address real clinical needs and have the potential to directly benefit patient assessment and treatment strategies.
             </p>
             <div class="card p-6 flex justify-center">
                 <iframe
@@ -251,27 +328,26 @@
              <div class="text-center mb-12">
                  <div class="flex justify-center items-center gap-4">
                     <svg class="w-8 h-8 icon-color" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z" /></svg>
-                    <h2 class="text-3xl font-bold section-title">Skills & Interests</h2>
+                    <h2 class="text-3xl font-bold section-title">Technical Skills & Personal Interests</h2>
                 </div>
             </div>
             <div class="grid md:grid-cols-2 gap-8">
-                <!-- Skills -->
                 <div class="card p-6">
                     <h3 class="text-xl font-bold mb-4">Technical Skills</h3>
+                    <p class="text-gray-600 mb-3">I leverage a diverse technical toolkit to develop and deploy robust AI solutions in the medical domain:</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="tag">Python</span><span class="tag">Pytorch</span><span class="tag">Tensorflow</span><span class="tag">Deep Learning</span><span class="tag">Image Processing</span><span class="tag">Matlab</span><span class="tag">C++</span><span class="tag">Java</span><span class="tag">Database Management</span>
+                        <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">PyTorch Lightning</span><span class="tag">Tensorflow</span><span class="tag">ClearML</span><span class="tag">Deep Learning</span><span class="tag">Medical Image Analysis</span><span class="tag">Computer Vision</span><span class="tag">C++</span><span class="tag">Git</span><span class="tag">Docker</span><span class="tag">SQL</span><span class="tag">Slurm</span><span class="tag">Condor</span><span class="tag">AWS</span><span class="tag">Scrum</span>
                     </div>
                 </div>
-                <!-- Languages & Hobbies -->
                 <div class="card p-6">
                     <h3 class="text-xl font-bold mb-4">Languages & Hobbies</h3>
                      <div class="mb-4">
                         <p class="text-gray-600"><strong class="font-medium">German:</strong> Native</p>
-                        <p class="text-gray-600"><strong class="font-medium">English:</strong> Proficient</p>
-                        <p class="text-gray-600"><strong class="font-medium">Spanish:</strong> Working Knowledge</p>
+                        <p class="text-gray-600"><strong class="font-medium">English:</strong> Full professional proficiency</p>
+                        <p class="text-gray-600"><strong class="font-medium">Spanish:</strong> Novice</p>
                     </div>
                     <div>
-                         <p class="text-gray-600">In my free time, I am an enthusiastic skier and enjoy bouldering and climbing.</p>
+                         <p class="text-gray-600">Beyond technology, I enjoy Swimming, Running, Road biking, and Ski touring. These activities reflect the dedication and endurance I bring to my professional work.</p>
                     </div>
                 </div>
             </div>
@@ -283,13 +359,11 @@
     <footer class="bg-white mt-20 transition">
         <div class="container mx-auto px-6 py-8 text-center">
             <div class="flex justify-center space-x-6 mb-4">
-                 <!-- LinkedIn -->
-                 <a href="https://de.linkedin.com/in/lukas-folle" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-800 transition">
+                 <a href="https://de.linkedin.com/in/lukas-folle" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-800 transition" aria-label="Lukas Folle on LinkedIn">
                     <span class="sr-only">LinkedIn</span>
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                 </a>
-                <!-- GitHub -->
-                <a href="https://github.com/lukasfolle" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-800 transition">
+                <a href="https://github.com/lukasfolle" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-800 transition" aria-label="Lukas Folle on GitHub">
                      <span class="sr-only">GitHub</span>
                      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
                 </a>
